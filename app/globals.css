@@ -15,7 +15,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,4 +23,67 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.underline-text {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: #313131;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.underline-text::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: #313131;
+}
+
+.shine-text {
+  display: inline-block;
+  background: linear-gradient(
+    110deg,
+    #ffffff 20%,
+    #ffffff 40%,
+    #9c9c9b 50%,
+    #ffffff 60%,
+    #ffffff 80%
+  );
+
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.shine-text-gold {
+  display: inline-block;
+  background: linear-gradient(
+    110deg,
+    #e9e6e6 20%,
+    #e9e6e6 40%,
+    #fff758 50%,
+    #e9e6e6 60%,
+    #e9e6e6 80%
+  );
+
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 5s linear  infinite;
 }
