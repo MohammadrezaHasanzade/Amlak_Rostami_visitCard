@@ -2,7 +2,7 @@
 
 
 export const userInfo = {
-    bussiness_name : "املاک سهیل",
+    bussiness_name : "امـلـاک سهــیــل",
     title_one : "املاکی خاص، انتخاب‌هایی متمایز",
     title_two : "برای کسانی که متفاوت و هوشمندانه انتخاب می‌کنند.",
     phone: "09123662381",
@@ -14,8 +14,9 @@ export const userInfo = {
     address: "استان البرز - کیانمهر - ساماندهی - بلوار ایمان",
     balad_loc: "https://balad.ir/p/PXLKOmQXx4EXg2",
     bgImg: "/2.jpeg",
-    tab_title: "امـلـاک سهــیــل",
+    tab_title: "املاک سهیل",
     description: "کارت ویزیت مشتریان املاک سهیل",
+    keywords: "",
     lat: "35.784893",
     lng: "50.871277"
 }

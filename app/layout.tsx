@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { userInfo } from "@/config/conf";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import InstallPWA from "@/components/pwa/InstallPWA";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -16,7 +17,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: `${userInfo.tab_title}`,
   description: `${userInfo.description}`,
-  keywords: "",
+  keywords: `${userInfo.keywords}`,
+  applicationName: `${userInfo.tab_title}`,
+  appleWebApp: {
+    capable: true,
+    title: `${userInfo.tab_title}`,
+    statusBarStyle: "default",
+  },
   authors: [
     {
       name: "mr_ROBOT",
@@ -39,18 +46,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fa_IR",
-    siteName: "process.env.NEXT_PUBLIC_APP_NAME",
+    siteName: `${userInfo.tab_title}`,
     url: "process.env.NEXT_PUBLIC_SITE_URL",
-    title: "process.env.NEXT_PUBLIC_APP_NAME",
+    title: `${userInfo.tab_title}`,
     description: `${userInfo.description}`,
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "process.env.NEXT_PUBLIC_APP_NAME,",
+    title: `${userInfo.tab_title}`,
     description: `${userInfo.description}`,
   },
-
 };
 
 export const viewport = {
@@ -62,12 +68,11 @@ export const viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      className={`w-full h-screen antialiased`}
-    >
-      <body className="h-screen w-full flex flex-col select-none">{children}</body>
+    <html lang="fa" dir="rtl" className={`antialiased`}>
+      <body className="min-h-screen min-w-full flex flex-col select-none">
+        <InstallPWA />
+        {children}
+      </body>
     </html>
   );
 }

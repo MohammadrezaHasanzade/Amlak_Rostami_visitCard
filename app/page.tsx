@@ -5,19 +5,10 @@ import neshanPng from "../public/Neshan-Logo.svg";
 import baladPng from "../public/Balad-Logo.svg";
 import { BsInstagram, BsTelegram, BsWhatsapp } from "react-icons/bs";
 import { FaMobileScreenButton } from "react-icons/fa6";
-import { useEffect, useState } from "react";
 import { userInfo } from "@/config/conf";
+import DynamicText from "@/components/DynamicText/DynamicText";
 
 export default function Home() {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % userInfo.title_three.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <main className="relative w-full h-11/12">
       <Image
@@ -26,7 +17,7 @@ export default function Home() {
         sizes="(max-width: 768px) 100vw, (max-width:1200px) 100vw, 100vw"
         fill
         priority
-        className="object-cover object-center absolute top-0 left-0 -z-20 "
+        className="object-cover object-center absolute top-0 left-0 -z-20"
       />
       <section className="z-50 text-white size-full backdrop-brightness-75 flex flex-col justify-between items-center gap-5 pt-8 bg-linear-to-t from-black/90 via-black/50 to-black/10">
         <div className="flex flex-col justify-center items-center gap-3 text-pretty">
@@ -46,16 +37,7 @@ export default function Home() {
               <FaMobileScreenButton />
             </span>
           </a>
-          {userInfo.title_three.length > 0 ? (
-            <h3
-                  key={index}
-                  className="text-center font-extrabold text-xl text-shadow-amber-200"
-                >
-                  {userInfo.title_three[index]}
-                </h3>
-          ) : (
-            <p></p>
-          )}
+          <DynamicText data={userInfo.title_three} />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-5 text-pretty pb-10">
           <div className="flex flex-col justify-center items-center gap-3">
