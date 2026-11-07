@@ -14,7 +14,7 @@ export default function InstallPopup({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
 
       <div className="w-full max-w-sm rounded-3xl bg-white p-6 text-center shadow-2xl">
 
