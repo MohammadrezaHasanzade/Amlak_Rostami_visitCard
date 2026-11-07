@@ -19,7 +19,17 @@ export default function Home() {
         priority
         className="object-cover object-center absolute top-0 left-0 -z-20"
       />
+
       <section className="z-50 text-white w-full max-h-screen h-screen backdrop-brightness-75 flex flex-col justify-evenly items-center gap-5 pt-8 bg-linear-to-t from-black/90 via-black/50 to-black/10">
+        <Image
+          src={userInfo.logoImg}
+          alt="logo image"
+          height={150}
+          width={150}
+          sizes="(max-width: 130px) 30vw, (max-width:50px) 30vw, 20vw"
+          priority
+          className=""
+        />
         <div className="flex flex-col justify-center items-center gap-3 text-pretty">
           <h2 className="text-4xl font-extrabold shine-text">
             {userInfo.bussiness_name}
@@ -79,7 +89,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
             <h5 className="text-gray-400 font-bold">آدرس و مسیریابی</h5>
-            <p className="text-gray-300 text-sm">{userInfo.address}</p>
+            <p className="text-gray-300 text-sm text-wrap text-center">{userInfo.address}</p>
             <div className="flex justify-center items-center gap-10">
               <a
                 href={`https://nshn.ir/?lat=${userInfo.lat}&lng=${userInfo.lng}`}
