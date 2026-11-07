@@ -69,7 +69,7 @@ export const viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fa" dir="rtl" className={`antialiased`}>
-      <body className="min-h-screen min-w-full flex flex-col select-none">
+      <body className="min-h-screen min-w-full flex flex-col select-none bg-black">
         <InstallPWA />
         {children}
       </body>
