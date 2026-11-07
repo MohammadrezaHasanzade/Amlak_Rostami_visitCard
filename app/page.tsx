@@ -10,7 +10,7 @@ import DynamicText from "@/components/DynamicText/DynamicText";
 
 export default function Home() {
   return (
-    <main className="relative w-full h-11/12 min-h-160">
+    <main className="relative w-full max-h-full h-180 min-h-140">
       <Image
         src={userInfo.bgImg}
         alt="backgroundImage"
@@ -19,7 +19,7 @@ export default function Home() {
         priority
         className="object-cover object-center absolute top-0 left-0 -z-20"
       />
-      <section className="z-50 text-white size-full min-h-160 backdrop-brightness-75 flex flex-col justify-between items-center gap-5 pt-8 bg-linear-to-t from-black/90 via-black/50 to-black/10">
+      <section className="z-50 text-white w-full max-h-full h-180 min-h-140 backdrop-brightness-75 flex flex-col justify-between items-center gap-5 pt-8 bg-linear-to-t from-black/90 via-black/50 to-black/10">
         <div className="flex flex-col justify-center items-center gap-3 text-pretty">
           <h2 className="text-4xl font-extrabold shine-text">
             {userInfo.bussiness_name}
